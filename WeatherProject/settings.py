@@ -103,6 +103,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Get weather base url
+WEATHER_API_BASE_URL = os.getenv('WEATHER_API_BASE_URL')
+WEATHER_API_KEY = os.getenv('WEATHER_API_KEY')
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
