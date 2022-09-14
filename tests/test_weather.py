@@ -10,7 +10,8 @@ class TestUrls(SimpleTestCase):
         self.assertEqual(resolve(url).func.view_class, index)
 
     def test_weather_stats_url_resolves(self):
-        url = reverse('location-stats',args=['London',2])
+        url = reverse('location-stats')
+       
         self.assertEqual(resolve(url).func.view_class, WeatherStats)
 
 
@@ -21,14 +22,17 @@ class TestViews(TestCase):
         self.client = Client()
 
     def test_successful_weather_request(self):
-        response = self.client.get(reverse('location-stats',args=['London',2]))
+        url = reverse('location-stats')
+        paramsurl = url+"?city=london&days=2"
+        response = self.client.get(paramsurl)
         self.assertEquals(response.status_code, 200)
 
     def test_successful_index_request(self):
         response = self.client.get(reverse('index'))
-        print(response)
         self.assertEquals(response.status_code, 200)
 
     def test_location_not_exist(self):
-        response = self.client.get(reverse('location-stats',args=['Lo',2]))
+        url = reverse('location-stats')
+        paramsurl = url+"?city=lo&days=2"
+        response = self.client.get(paramsurl)
         self.assertEquals(response.status_code, 404)

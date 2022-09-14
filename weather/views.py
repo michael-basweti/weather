@@ -19,7 +19,9 @@ class index(APIView):
 
 class WeatherStats(APIView):
 
-    def get(self, request, city, days):
+    def get(self, request):
+        city = request.query_params.get('city')
+        days = request.query_params.get('days')
         api_URL = "{}key={}&q={}&days={}".format(WEATHER_API_BASE_URL,WEATHER_API_KEY,city,days)
 
         raw_stats = requests.get(api_URL)

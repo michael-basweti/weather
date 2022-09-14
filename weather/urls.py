@@ -3,5 +3,5 @@ from .import views
 
 urlpatterns = [
     path('index', views.index.as_view(), name="index"),
-    path('location/<city>/<days>', views.WeatherStats.as_view(), name="location-stats"),
+    path('location/', views.WeatherStats.as_view(), name="location-stats"),
 ]
