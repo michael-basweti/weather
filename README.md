@@ -1,5 +1,5 @@
 # Weather Forecast App
-The purpose of this project is to get what the weather is going to be for the next 1-10 days. I used [Weather API](https://www.weatherapi.com/) to get the weather forecast data. django-rest-framework was used to create the api.
+The purpose of this project is to get what the weather is going to be for the next 1-10 days. I used [Weather API](https://www.weatherapi.com/) to get the weather forecast data. Django-rest-framework was used to create the api.
 
 # Running the Application Locally
 - clone the repo into a location of your choice i.e 
@@ -43,8 +43,11 @@ python manage.py runserver
 In your API Client of choice, hit the url http://127.0.0.1:8000/api/location/ with parameter **city** and days i.e http://127.0.0.1:8000/api/location/?city=london&days=2
 
 Below is a screenshots for a successful query.
+![successful](https://user-images.githubusercontent.com/23398223/190058464-7296a465-f690-4925-9fc8-38d315fa1bbf.png)
 
-Below is a failed query because no such city exits
+Below is a failed query because no such city exists
+![failed](https://user-images.githubusercontent.com/23398223/190058641-bf54d793-969b-4165-b4c7-8439ced3e05e.png)
+
 
 - To run tests, execute the following command in the root folder of the project.
 ```
