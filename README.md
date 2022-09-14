@@ -33,6 +33,21 @@ or
 pip3 install -r requirements.txt
 ```
 
+- Create a .env file in the root folder as shown below:
+```
+touch .env
+
+#In the file, paste in the values as shown below.
+
+source venv/Scripts/activate
+export SECRET_VALUE="xxxxxxxxxxxxxxxxxxxxxx"
+export WEATHER_API_BASE_URL="http://api.weatherapi.com/v1/forecast.json?"
+export WEATHER_API_KEY="--your-key"
+
+
+```
+A .env file will be shared when submitting this project. Kindly copy it to the root folder before running this application
+
 - while still in the root folder, we can now start the server through the command below.
 ```
 python manage.py runserver
